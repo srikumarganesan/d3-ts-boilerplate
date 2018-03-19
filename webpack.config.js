@@ -4,11 +4,14 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: './src/ts/app.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
         // publicPath: '/dist'
+    },
+    resolve: {
+        extensions: ['.ts', '.js']
     },
     module: {
         rules: [
@@ -22,14 +25,11 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['es2015']
-                        }
+                        loader: 'ts-loader'
                     }
                 ]
             },
@@ -53,9 +53,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            d3: 'd3'
-        }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
