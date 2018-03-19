@@ -1,12 +1,12 @@
-# d3-boilerplate
-d3-boilerplate can be used to develop D3 visualizations. This project is bundled using
-webpack and supports code written in ES6
+# d3-ts-boilerplate
+d3-ts-boilerplate can be used to develop D3 visualizations. This project is bundled using
+webpack and supports code written in Typescript
 
 # Folder Structure
-The JS files are taken from src/js directory for transpiling. D3 is added as a plugin in 
-the webpack.config.js file and is available in the js files. The css files needed should 
-be placed in the src/css directory and should be included in the app.js file so that they
-will be bundled.
+The TS files are taken from src/ts directory for transpiling. D3 types are added as part of
+npm and are imported in the typescript file using import statement. The css files needed
+should be placed in the src/css directory and should be included in the app.ts 
+file so that they will be bundled.
 
 # Initial Setup
 After extracting the project, Please run 'npm install'.
